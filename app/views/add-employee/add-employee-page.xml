@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="添加员工" class="action-bar">
+        <NavigationButton text="返回" android.systemIcon="ic_menu_back"/>
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="姓名:" class="text-lg"/>
+            <TextField text="{{ name }}" hint="输入员工姓名" class="input mb-2"/>
+
+            <Label text="职位:" class="text-lg"/>
+            <TextField text="{{ position }}" hint="输入职位" class="input mb-2"/>
+
+            <Label text="部门:" class="text-lg"/>
+            <TextField text="{{ department }}" hint="输入部门" class="input mb-2"/>
+
+            <Label text="邮箱:" class="text-lg"/>
+            <TextField text="{{ email }}" hint="输入邮箱" keyboardType="email" class="input mb-2"/>
+
+            <Label text="电话:" class="text-lg"/>
+            <TextField text="{{ phone }}" hint="输入电话" keyboardType="phone" class="input mb-2"/>
+
+            <Label text="选择组别:" class="text-lg"/>
+            <ListView items="{{ groups }}" selectedIndex="{{ selectedGroupIndex }}" height="100" class="mb-4">
+                <ListView.itemTemplate>
+                    <Label text="{{ name }}" class="p-2"/>
+                </ListView.itemTemplate>
+            </ListView>
+
+            <Button text="保存" tap="{{ onSave }}" class="-primary"/>
+        </StackLayout>
+    </ScrollView>
+</Page>
